@@ -64,16 +64,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="draw.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="moving.cpp" />
-    <ClCompile Include="start.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="globals.h" />
-    <ClInclude Include="header.h" />
     <ClInclude Include="world.h" />
-    <ClInclude Include="zork_classes.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

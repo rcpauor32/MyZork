@@ -6,10 +6,6 @@ public:
 	const Rooms* origin;
 	const Rooms* nextRoom;
 
-	void SetDir(char* direction);
-	void SetOrigin(const Rooms* room);
-	void SetNRoom(Rooms* room);
-
-	const Rooms* Exits::MoveRoom(Rooms* room);
+	const Rooms* Exits::MoveRoom(Rooms* current_room);
 
 };

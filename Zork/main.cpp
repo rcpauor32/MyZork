@@ -1,6 +1,16 @@
 #include "room.h"
 #include "exit.h"
+#include "world.h"
+#include "player.h"
+#include <stdio.h>
 
-int Main() {
+int main() {
+	World My_World;
 
+	My_World.CreateWorld();
+
+	player->current_room->Look();
+
+	getchar();
+	return 0;
 }

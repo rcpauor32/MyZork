@@ -1,4 +1,5 @@
-
+#ifndef _ROOM_H_
+#define _ROOM_H_
 
 class Rooms {
 public: 
@@ -8,3 +9,5 @@ public:
 	void Look();
 
 };
+
+#endif

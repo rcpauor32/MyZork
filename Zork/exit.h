@@ -1,3 +1,6 @@
+#ifndef _EXITS_H_
+#define _EXITS_H_
+
 #include "room.h"
 
 class Exits {
@@ -10,3 +13,5 @@ public:
 	const Rooms* Exits::MoveRoom(Rooms* current_room);
 
 };
+
+#endif // !_EXITS_H_

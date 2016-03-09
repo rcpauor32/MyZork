@@ -1,6 +1,8 @@
 #include "world.h"
 #include "room.h"
 #include "exit.h"
+#include "player.h"
+#include <stdio.h>
 
 void World::CreateWorld() {
 	// Rooms Set Up
@@ -27,22 +29,22 @@ void World::CreateWorld() {
 	UpAngel->description = "A huge angel statue is standing at the middle of the room. From where you are you can just see the bust but it is enough to notice that his head is missing.\nYou look downwards. There are stairs leading to the base of the statue.";
 
 	DwAngel->name = "Downstairs Angel Room";
-	DwAngel->description = "123melapelodelreves";
+	DwAngel->description = "You can see the statue from the bottom and it is even more impresive from here. You are in a round room with few exits.";
 
 	Studio->name = "Studio";
-	Studio->description = "melacascoviendoacarrasco";
+	Studio->description = "You came up in a little studio with a desk a little light that illuminates the small room.\nYou can see few drawer in the desk.";
 
 	Stone_R->name = "Stone Room";
-	Stone_R->description = "estopamedalamejorfarlopa";
+	Stone_R->description = "The room is completly made of stone and granite. There is an statue in a corner that resembles a woman covering her face with her own hands.";
 
 	Mirror_R->name = "Mirror Room";
-	Mirror_R->description = "enelespejomeladespellejo";
+	Mirror_R->description = "The whole room is surrounded by 2 meters high mirrors that refelect everything in the place including you.";
 
 	Library->name = "Library";
-	Library->description = "esbuendiasihaypollaentuvida";
+	Library->description = "Sheleves plenty of books are fulling the whole, huge library. You can see some books standing out from the rest. Why?";
 
 	Dark_R->name = "Dark Room";
-	Dark_R->description = "hepreparadounacenadepicoteo,osapuntais";
+	Dark_R->description = "Nothing can bee seen in this room, the darkness is so intense not even your torch is able to illuminate it. Is this even possible?\nFeels    like the darkness itself it's an entity.";
 
 	Waiting_R->name = "Waiting Room";
 	Waiting_R->description = "cuantomasesperoconmasesmerotelaesfero";
@@ -118,4 +120,6 @@ void World::CreateWorld() {
 
 	// ----
 
+	// Player Set Up
+	player->current_room = Surgery;
 }

@@ -53,4 +53,69 @@ void World::CreateWorld() {
 	// ----
 
 	// Exits Set Up
+
+	Exits* SEC_SUR = new Exits;
+	Exits* SUR_UAR = new Exits;
+	Exits* UAR_STU = new Exits;
+	Exits* UAR_DAR = new Exits;
+	Exits* DAR_STO = new Exits;
+	Exits* DAR_LB = new Exits;
+	Exits* STO_MRR = new Exits;
+	Exits* LB_DR = new Exits;
+	Exits* DAR_WR = new Exits;
+	Exits* WR_REC = new Exits;
+
+	SEC_SUR->front_dir = "south";
+	SEC_SUR->back_dir = "north";
+	SEC_SUR->origin = Secret_R;
+	SEC_SUR->nextRoom = Surgery;
+
+	SUR_UAR->front_dir = "south";
+	SUR_UAR->back_dir = "north";
+	SUR_UAR->origin = Surgery;
+	SUR_UAR->nextRoom = UpAngel;
+	SUR_UAR->open = false;
+
+	UAR_STU->front_dir = "west";
+	UAR_STU->back_dir = "east";
+	UAR_STU->origin = UpAngel;
+	UAR_STU->nextRoom = Studio;
+
+	UAR_DAR->front_dir = "down";
+	UAR_DAR->back_dir = "up";
+	UAR_DAR->origin = UpAngel;
+	UAR_DAR->nextRoom = DwAngel;
+
+	DAR_STO->front_dir = "west";
+	DAR_STO->back_dir = "east";
+	DAR_STO->origin = DwAngel;
+	DAR_STO->nextRoom = Stone_R;
+
+	STO_MRR->front_dir = "south";
+	STO_MRR->back_dir = "north";
+	STO_MRR->origin = Stone_R;
+	STO_MRR->nextRoom = Mirror_R;
+
+	DAR_WR->front_dir = "south";
+	DAR_WR->back_dir = "north";
+	DAR_WR->origin = DwAngel;
+	DAR_WR->nextRoom = Waiting_R;
+
+	WR_REC->front_dir = "sout";
+	WR_REC->back_dir = "north";
+	WR_REC->origin = Waiting_R;
+	WR_REC->nextRoom = Reception;
+
+	DAR_LB->front_dir = "east";
+	DAR_LB->back_dir = "west";
+	DAR_LB->origin = DwAngel;
+	DAR_LB->nextRoom = Library;
+
+	LB_DR->front_dir = "south";
+	LB_DR->back_dir = "north";
+	LB_DR->origin = Library;
+	LB_DR->nextRoom = Dark_R;
+
+	// ----
+
 }

@@ -1,10 +1,10 @@
 #include "exit.h"
 #include "room.h"
 
-const Rooms* Exits::MoveRoom(Rooms* current_room) {
+void Exits::MoveRoom(int& current_room) {
 	if (current_room == origin)
-		return nextRoom;
+		current_room = nextRoom;
 	else
-		return origin;
+		current_room = origin;
 
 }

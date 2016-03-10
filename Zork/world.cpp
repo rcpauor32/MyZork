@@ -5,121 +5,98 @@
 #include <stdio.h>
 
 void World::CreateWorld() {
-	// Rooms Set Up
+	
+	room[Secret].name = "Secret Room";
+	room[Secret].description = "You see a dark room, just illuminated by your faint torch.\nFirst you dont realize but suddendly you notice a hooded figure standing in front of you. He doesn't seem to have seen you yet.";
+	room[Secret].room_num = Secret;
 
-	Rooms* Secret_R = new Rooms;
-	Rooms* Surgery = new Rooms;
-	Rooms* UpAngel = new Rooms;
-	Rooms* DwAngel = new Rooms;
-	Rooms* Studio = new Rooms;
-	Rooms* Stone_R = new Rooms;
-	Rooms* Mirror_R = new Rooms;
-	Rooms* Library = new Rooms;
-	Rooms* Dark_R = new Rooms;
-	Rooms* Waiting_R = new Rooms;
-	Rooms* Reception = new Rooms;
+	room[Surgery].name = "Surgery";
+	room[Surgery].description = "The whole room has an old and rusty feeling. An strange smell surrounds you. You can feel a dark and heavy 'entity' ajust behind you but it may just be your imagination.";
 
-	Secret_R->name = "Secret Room";
-	Secret_R->description = "You see a dark room, just illuminated by your faint torch.\nFirst you dont realize but suddendly you notice a hooded figure standing in front of you. He doesn't seem to have seen you yet.";
+	room[UpAngel].name = "Upstairs Angel Room";
+	room[UpAngel].description = "A huge angel statue is standing at the middle of the room. From where you are you can just see the bust but it is enough to notice that his head is missing.\nYou look downwards. There are stairs leading to the base of the statue.";
+				 
+	room[DwAngel].name = "Downstairs Angel Room";
+	room[DwAngel].description = "You can see the statue from the bottom and it is even more impresive from here. You are in a round room with few exits.";
 
-	Surgery->name = "Surgery";
-	Surgery->description = "The whole room has an old and rusty feeling. An strange smell surrounds you. You can feel a dark and heavy 'entity' ajust behind you but it may just be your imagination.";
+	room[Studio].name = "Studio";
+	room[Studio].description = "You came up in a little studio with a desk a little light that illuminates the small room.\nYou can see few drawer in the desk.";
 
-	UpAngel->name = "Upstairs Angel Room";
-	UpAngel->description = "A huge angel statue is standing at the middle of the room. From where you are you can just see the bust but it is enough to notice that his head is missing.\nYou look downwards. There are stairs leading to the base of the statue.";
+	room[Stone].name = "Stone Room";
+	room[Stone].description = "The room is completly made of stone and granite. There is an statue in a corner that resembles a woman covering her face with her own hands.";
 
-	DwAngel->name = "Downstairs Angel Room";
-	DwAngel->description = "You can see the statue from the bottom and it is even more impresive from here. You are in a round room with few exits.";
+	room[Mirror].name = "Mirror Room";
+	room[Mirror].description = "The whole room is surrounded by 2 meters high mirrors that refelect everything in the place including you.";
 
-	Studio->name = "Studio";
-	Studio->description = "You came up in a little studio with a desk a little light that illuminates the small room.\nYou can see few drawer in the desk.";
+	room[Library].name = "Library";
+	room[Library].description = "Sheleves plenty of books are fulling the whole, huge library. You can see some books standing out from the rest. Why?";
 
-	Stone_R->name = "Stone Room";
-	Stone_R->description = "The room is completly made of stone and granite. There is an statue in a corner that resembles a woman covering her face with her own hands.";
+	room[Dark].name = "Dark Room";
+	room[Dark].description = "Nothing can bee seen in this room, the darkness is so intense not even your torch is able to illuminate it. Is this even possible?\nFeels    like the darkness itself it's an entity.";
 
-	Mirror_R->name = "Mirror Room";
-	Mirror_R->description = "The whole room is surrounded by 2 meters high mirrors that refelect everything in the place including you.";
+	room[Waiting].name = "Waiting Room";
+	room[Waiting].description = "cuantomasesperoconmasesmerotelaesfero";
 
-	Library->name = "Library";
-	Library->description = "Sheleves plenty of books are fulling the whole, huge library. You can see some books standing out from the rest. Why?";
+	room[Reception].name = "Reception";
+	room[Reception].description = "cuandodigodiegodiegodigodigo...polla";
 
-	Dark_R->name = "Dark Room";
-	Dark_R->description = "Nothing can bee seen in this room, the darkness is so intense not even your torch is able to illuminate it. Is this even possible?\nFeels    like the darkness itself it's an entity.";
+	
 
-	Waiting_R->name = "Waiting Room";
-	Waiting_R->description = "cuantomasesperoconmasesmerotelaesfero";
+	
 
-	Reception->name = "Reception";
-	Reception->description = "cuandodigodiegodiegodigodigo...polla";
+		exit[SEC_SUR].front_dir = "south"; 
+		exit[SEC_SUR].back_dir =  "north";
+		exit[SEC_SUR].origin = room[Secret];
+		exit[SEC_SUR].nextRoom = room[Surgery];
 
-	// ----
+		exit[SUR_UA].front_dir = "south";
+		exit[SUR_UA].back_dir = "north";
+		exit[SUR_UA].origin = room[Surgery];
+		exit[SUR_UA].nextRoom = room[UpAngel];
+		exit[SUR_UA].open = false;
+								
+		exit[UA_STU].front_dir = "west";
+		exit[UA_STU].back_dir = "east";
+		exit[UA_STU].origin = room[UpAngel];
+		exit[UA_STU].nextRoom = room[Studio];
 
-	// Exits Set Up
+		exit[UA_DA].front_dir = "down";
+		exit[UA_DA].back_dir = "up";
+		exit[UA_DA].origin = room[UpAngel];
+		exit[UA_DA].nextRoom = room[DwAngel];
 
-	Exits* SEC_SUR = new Exits;
-	Exits* SUR_UAR = new Exits;
-	Exits* UAR_STU = new Exits;
-	Exits* UAR_DAR = new Exits;
-	Exits* DAR_STO = new Exits;
-	Exits* DAR_LB = new Exits;
-	Exits* STO_MRR = new Exits;
-	Exits* LB_DR = new Exits;
-	Exits* DAR_WR = new Exits;
-	Exits* WR_REC = new Exits;
+		exit[DA_STO].front_dir = "west";
+		exit[DA_STO].back_dir = "east";
+		exit[DA_STO].origin = room[DwAngel];
+		exit[DA_STO].nextRoom = room[Stone];
 
-	SEC_SUR->front_dir = "south";
-	SEC_SUR->back_dir = "north";
-	SEC_SUR->origin = Secret_R;
-	SEC_SUR->nextRoom = Surgery;
+		exit[STO_MRR].front_dir = "south";
+		exit[STO_MRR].back_dir = "north";
+		exit[STO_MRR].origin = room[Stone];
+		exit[STO_MRR].nextRoom = room[Mirror];
 
-	SUR_UAR->front_dir = "south";
-	SUR_UAR->back_dir = "north";
-	SUR_UAR->origin = Surgery;
-	SUR_UAR->nextRoom = UpAngel;
-	SUR_UAR->open = false;
+		exit[DA_WAI].front_dir = "south";
+		exit[DA_WAI].back_dir = "north";
+		exit[DA_WAI].origin = room[DwAngel];
+		exit[DA_WAI].nextRoom = room[Waiting];
 
-	UAR_STU->front_dir = "west";
-	UAR_STU->back_dir = "east";
-	UAR_STU->origin = UpAngel;
-	UAR_STU->nextRoom = Studio;
+		exit[WAI_REC].front_dir = "south";
+		exit[WAI_REC].back_dir = "north";
+		exit[WAI_REC].origin = room[Waiting];
+		exit[WAI_REC].nextRoom = room[Reception];
 
-	UAR_DAR->front_dir = "down";
-	UAR_DAR->back_dir = "up";
-	UAR_DAR->origin = UpAngel;
-	UAR_DAR->nextRoom = DwAngel;
-
-	DAR_STO->front_dir = "west";
-	DAR_STO->back_dir = "east";
-	DAR_STO->origin = DwAngel;
-	DAR_STO->nextRoom = Stone_R;
-
-	STO_MRR->front_dir = "south";
-	STO_MRR->back_dir = "north";
-	STO_MRR->origin = Stone_R;
-	STO_MRR->nextRoom = Mirror_R;
-
-	DAR_WR->front_dir = "south";
-	DAR_WR->back_dir = "north";
-	DAR_WR->origin = DwAngel;
-	DAR_WR->nextRoom = Waiting_R;
-
-	WR_REC->front_dir = "sout";
-	WR_REC->back_dir = "north";
-	WR_REC->origin = Waiting_R;
-	WR_REC->nextRoom = Reception;
-
-	DAR_LB->front_dir = "east";
-	DAR_LB->back_dir = "west";
-	DAR_LB->origin = DwAngel;
-	DAR_LB->nextRoom = Library;
-
-	LB_DR->front_dir = "south";
-	LB_DR->back_dir = "north";
-	LB_DR->origin = Library;
-	LB_DR->nextRoom = Dark_R;
+		exit[DA_LIB].front_dir = "east";
+		exit[DA_LIB].back_dir = "west";
+		exit[DA_LIB].origin = room[DwAngel];
+		exit[DA_LIB].nextRoom = room[Library];
+					
+		exit[LIB_DK].front_dir = "south";
+		exit[LIB_DK].back_dir = "north";
+		exit[LIB_DK].origin = room[Library];
+		exit[LIB_DK].nextRoom = room[Dark];
 
 	// ----
 
 	// Player Set Up
-	player->current_room = Surgery;
+	player->current_room = room[Surgery];
 }

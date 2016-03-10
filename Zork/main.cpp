@@ -9,7 +9,6 @@ int main() {
 
 	My_World.CreateWorld();
 
-	player->current_room->Look();
 
 	getchar();
 	return 0;

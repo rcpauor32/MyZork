@@ -2,15 +2,16 @@
 #define _EXITS_H_
 
 #include "room.h"
+#include "globals.h";
 
 class Exits {
 public:
+
 	const char* front_dir, * back_dir;
-	const Rooms* origin;
-	const Rooms* nextRoom;
+	const int origin, nextRoom;
 	bool open = true;
 
-	const Rooms* Exits::MoveRoom(Rooms* current_room);
+	void Exits::MoveRoom(int& current_room);
 
 };
 

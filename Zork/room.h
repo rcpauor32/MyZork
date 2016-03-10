@@ -2,9 +2,9 @@
 #define _ROOM_H_
 
 class Rooms {
-public: 
-	const char* name;
-	const char* description;
+public:
+	Rooms(const char* name, const char* description, const int room_num);
+	~Rooms();
 
 	void Look();
 
